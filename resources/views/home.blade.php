@@ -1,37 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="lofi">
 <head>
     <meta charset="UTF-8">
-    <title>Home - Chirps</title>
+    <title>Home - Chirper</title>
 
-    {{-- VITE (WAJIB untuk load CSS & JS Laravel) --}}
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet"/>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-100 font-sans">
 
-<div class="max-w-xl mx-auto mt-10">
+<body class="bg-gray-100 min-h-screen font-sans">
 
-    <h1 class="text-2xl font-bold mb-6">Chirps</h1>
+    <div class="max-w-2xl mx-auto py-10">
 
-    @foreach ($chirps as $chirp)
-        <div class="bg-white p-4 mb-4 rounded shadow">
-            
-            <div class="font-bold text-gray-800">
-                {{ $chirp['author'] }}
+        <h1 class="text-3xl font-bold mb-6 text-center">
+            Home Page
+        </h1>
+
+        @foreach ($chirps as $chirp)
+            <div class="card bg-white shadow mt-6">
+                <div class="card-body">
+
+                    <div class="font-semibold text-lg">
+                        {{ $chirp['author'] }}
+                    </div>
+
+                    <div class="mt-2">
+                        {{ $chirp['message'] }}
+                    </div>
+
+                    <div class="text-sm text-gray-500 mt-3">
+                        {{ $chirp['time'] }}
+                    </div>
+
+                </div>
             </div>
+        @endforeach
 
-            <div class="text-gray-700 mt-2">
-                {{ $chirp['message'] }}
-            </div>
-
-            <div class="text-sm text-gray-400 mt-2">
-                {{ $chirp['time'] }}
-            </div>
-
+        <div class="text-center mt-8">
+            <a href="/" class="btn btn-secondary">Back to Welcome</a>
         </div>
-    @endforeach
 
-</div>
+    </div>
 
 </body>
 </html>
