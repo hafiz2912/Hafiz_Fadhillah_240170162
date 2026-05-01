@@ -82,7 +82,7 @@
 
     <!-- FOOTER -->
     <footer class="text-center p-6 text-white/70 text-sm">
-        © 2026 Chirper • Built with ❤️
+        © 2026 Chirper • Built with ❤️ Hafiz Fadhillah (240170162)
     </footer>
 
 </body>
