@@ -3,61 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Home - Chirps</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f3f4f6;
-            padding: 20px;
-        }
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-        }
-
-        .card {
-            background: white;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        .author {
-            font-weight: bold;
-            color: #111827;
-        }
-
-        .time {
-            font-size: 12px;
-            color: gray;
-        }
-
-        .message {
-            margin-top: 8px;
-            font-size: 15px;
-        }
-    </style>
+    {{-- VITE (WAJIB untuk load CSS & JS Laravel) --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
+<body class="bg-gray-100 font-sans">
 
-<div class="container">
+<div class="max-w-xl mx-auto mt-10">
 
-    <h2>Chirps</h2>
+    <h1 class="text-2xl font-bold mb-6">Chirps</h1>
 
     @foreach ($chirps as $chirp)
-        <div class="card">
-            <div class="author">
+        <div class="bg-white p-4 mb-4 rounded shadow">
+            
+            <div class="font-bold text-gray-800">
                 {{ $chirp['author'] }}
             </div>
 
-            <div class="message">
+            <div class="text-gray-700 mt-2">
                 {{ $chirp['message'] }}
             </div>
 
-            <div class="time">
+            <div class="text-sm text-gray-400 mt-2">
                 {{ $chirp['time'] }}
             </div>
+
         </div>
     @endforeach
 
