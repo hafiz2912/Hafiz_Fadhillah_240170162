@@ -99,6 +99,38 @@
             </div>
 
         </div>
+        <x-layout>
+    <x-slot:title>
+        Welcome
+    </x-slot:title>
+
+    <div class="max-w-2xl mx-auto py-8">
+
+        @foreach ($chirps as $chirp)
+            <div class="card bg-base-100 shadow mt-6">
+                <div class="card-body">
+
+                    <!-- Author -->
+                    <div class="font-semibold text-lg">
+                        {{ $chirp['author'] }}
+                    </div>
+
+                    <!-- Message -->
+                    <div class="mt-2">
+                        {{ $chirp['message'] }}
+                    </div>
+
+                    <!-- Time -->
+                    <div class="text-sm text-gray-500 mt-3">
+                        {{ $chirp['time'] }}
+                    </div>
+
+                </div>
+            </div>
+        @endforeach
+
+    </div>
+</x-layout>
     </main>
 
 <!-- FOOTER -->
